@@ -20,25 +20,19 @@ const logos = [
 
 export default function TrustBar() {
   return (
-    <section className="relative flex flex-col items-center gap-12 w-full py-20 px-[120px] bg-[var(--bg-primary)]">
-      {/* Top gradient line */}
-      <div className="absolute top-0 left-[120px] right-[120px] h-px bg-gradient-to-r from-transparent via-[var(--border-hover)] to-transparent" />
-
-      <AnimateIn variant="fadeIn" delay={0.1}>
-        <span className="font-mono text-[11px] text-[var(--text-muted)] tracking-[4px]">
-          TRUSTED BY LEADING INSTITUTIONS
-        </span>
-      </AnimateIn>
+    <section className="relative flex flex-col items-center gap-10 w-full py-16 px-[120px] bg-[var(--bg-primary)]">
+      {/* Top line */}
+      <div className="absolute top-0 left-[120px] right-[120px] section-divider" />
 
       {/* Compliance badges */}
-      <AnimateIn variant="fadeUp" delay={0.2} className="w-full">
-        <div className="flex items-center justify-center gap-6 w-full flex-wrap">
+      <AnimateIn variant="fadeUp" delay={0.1} className="w-full">
+        <div className="flex items-center justify-center gap-4 w-full flex-wrap">
           {badges.map(({ icon: Icon, label }) => (
             <div
               key={label}
-              className="flex items-center gap-2.5 px-5 py-2.5 rounded-[8px] border border-[var(--border)] bg-[var(--bg-surface)] hover:border-[var(--border-hover)] transition-all duration-300"
+              className="flex items-center gap-2.5 px-5 py-2.5 rounded-full border border-[var(--border)] bg-white/[0.02] hover:border-[var(--border-hover)] hover:bg-white/[0.03] transition-all duration-300"
             >
-              <Icon size={15} className="text-[var(--accent)]" strokeWidth={1.5} />
+              <Icon size={14} className="text-[var(--accent)]" strokeWidth={1.5} />
               <span className="text-[13px] font-medium text-[var(--text-secondary)]">
                 {label}
               </span>
@@ -47,13 +41,13 @@ export default function TrustBar() {
         </div>
       </AnimateIn>
 
-      {/* Logo row — marquee style */}
-      <AnimateIn variant="fadeIn" delay={0.3} className="w-full overflow-hidden">
+      {/* Logo row */}
+      <AnimateIn variant="fadeIn" delay={0.2} className="w-full">
         <div className="flex items-center justify-center gap-16 w-full flex-wrap">
           {logos.map((name) => (
             <span
               key={name}
-              className="text-[12px] font-semibold text-[var(--text-muted)] tracking-[3px] hover:text-[var(--text-secondary)] transition-colors duration-300"
+              className="text-[12px] font-semibold text-[var(--text-muted)] tracking-[3px] hover:text-[var(--text-secondary)] transition-colors duration-400 cursor-default"
             >
               {name}
             </span>
@@ -61,8 +55,8 @@ export default function TrustBar() {
         </div>
       </AnimateIn>
 
-      {/* Bottom gradient line */}
-      <div className="absolute bottom-0 left-[120px] right-[120px] h-px bg-gradient-to-r from-transparent via-[var(--border)] to-transparent" />
+      {/* Bottom line */}
+      <div className="absolute bottom-0 left-[120px] right-[120px] section-divider" />
     </section>
   );
 }

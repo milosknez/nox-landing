@@ -24,14 +24,14 @@ const footerColumns = [
 export default function Footer() {
   return (
     <footer className="relative flex flex-col gap-12 w-full py-16 px-[120px] bg-[var(--bg-primary)]">
-      {/* Top gradient line */}
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[var(--border-hover)] to-transparent" />
+      {/* Top divider */}
+      <div className="absolute top-0 left-0 right-0 section-divider" />
 
       {/* Top */}
       <AnimateIn variant="fadeUp" delay={0.1}>
         <div className="flex justify-between">
           {/* Brand */}
-          <div className="flex flex-col gap-4 max-w-[280px]">
+          <div className="flex flex-col gap-5 max-w-[280px]">
             <a href="/" className="flex items-center gap-2.5 hover:opacity-90 transition-opacity duration-200">
               <svg width="24" height="24" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <defs>
@@ -75,8 +75,8 @@ export default function Footer() {
         </div>
       </AnimateIn>
 
-      {/* Gradient Divider */}
-      <div className="w-full h-px bg-gradient-to-r from-transparent via-[var(--border)] to-transparent" />
+      {/* Divider */}
+      <div className="w-full section-divider" />
 
       {/* Bottom */}
       <div className="flex items-center justify-between">

@@ -7,6 +7,7 @@ import Security from "@/components/Security";
 import CaseStudies from "@/components/CaseStudies";
 import StrategicStatement from "@/components/StrategicStatement";
 import Pricing from "@/components/Pricing";
+import CTABanner from "@/components/CTABanner";
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -22,6 +23,7 @@ export default function Home() {
         <CaseStudies />
         <StrategicStatement />
         <Pricing />
+        <CTABanner />
         <Footer />
       </div>
     </main>
