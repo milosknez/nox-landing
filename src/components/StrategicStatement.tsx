@@ -26,7 +26,7 @@ export default function StrategicStatement() {
 
       <AnimateIn variant="fadeUp" delay={0.3}>
         <p className="text-[16px] text-[var(--text-secondary)] text-center leading-[1.7] max-w-[500px]">
-          Meridian was founded with a single conviction: sovereign AI
+          Nox was founded with a single conviction: sovereign AI
           capabilities should not require sovereign-scale budgets.
         </p>
       </AnimateIn>

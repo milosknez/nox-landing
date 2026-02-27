@@ -15,7 +15,7 @@ const dmMono = DM_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Meridian — Intelligence Infrastructure for Critical Operations",
+  title: "Nox — Intelligence Infrastructure for Critical Operations",
   description:
     "Enterprise-grade AI deployment platform built for regulated industries. Real-time decisioning across defense, finance, and sovereign systems.",
 };

@@ -141,12 +141,19 @@ export default function Navbar() {
     >
       <div className="relative flex items-center justify-between h-[72px] px-16">
         {/* Logo */}
-        <div className="flex items-center gap-2.5">
-          <div className="relative w-7 h-7 rounded-[3px] bg-gradient-to-br from-[var(--gradient-start)] to-[var(--gradient-mid)]">
-            <div className="absolute left-[8px] top-[8px] w-3 h-3 bg-[var(--bg-primary)] rounded-[2px]" />
-          </div>
-          <span className="text-[15px] font-semibold text-[var(--text-primary)] tracking-[3px]">
-            MERIDIAN
+        <div className="flex items-center gap-3">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="nox-grad" x1="0" y1="0" x2="28" y2="28" gradientUnits="userSpaceOnUse">
+                <stop stopColor="var(--gradient-start)" />
+                <stop offset="1" stopColor="var(--gradient-mid)" />
+              </linearGradient>
+            </defs>
+            <path d="M4 2L24 2C25.1 2 26 2.9 26 4L26 14L14 26L4 26C2.9 26 2 25.1 2 24L2 4C2 2.9 2.9 2 4 2Z" fill="url(#nox-grad)" />
+            <path d="M10 8L18 8L18 14L10 20L10 8Z" fill="var(--bg-primary)" opacity="0.9" />
+          </svg>
+          <span className="text-[17px] font-bold text-[var(--text-primary)] tracking-[4px]">
+            NOX
           </span>
         </div>
 

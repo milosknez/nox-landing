@@ -33,11 +33,18 @@ export default function Footer() {
           {/* Brand */}
           <div className="flex flex-col gap-4 max-w-[280px]">
             <div className="flex items-center gap-2.5">
-              <div className="relative w-6 h-6 rounded-[3px] bg-gradient-to-br from-[var(--gradient-start)] to-[var(--gradient-mid)]">
-                <div className="absolute left-[7px] top-[7px] w-[10px] h-[10px] bg-[var(--bg-primary)] rounded-[2px]" />
-              </div>
-              <span className="text-[14px] font-semibold text-[var(--text-primary)] tracking-[3px]">
-                MERIDIAN
+              <svg width="24" height="24" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="nox-grad-footer" x1="0" y1="0" x2="28" y2="28" gradientUnits="userSpaceOnUse">
+                    <stop stopColor="var(--gradient-start)" />
+                    <stop offset="1" stopColor="var(--gradient-mid)" />
+                  </linearGradient>
+                </defs>
+                <path d="M4 2L24 2C25.1 2 26 2.9 26 4L26 14L14 26L4 26C2.9 26 2 25.1 2 24L2 4C2 2.9 2.9 2 4 2Z" fill="url(#nox-grad-footer)" />
+                <path d="M10 8L18 8L18 14L10 20L10 8Z" fill="var(--bg-primary)" opacity="0.9" />
+              </svg>
+              <span className="text-[15px] font-bold text-[var(--text-primary)] tracking-[4px]">
+                NOX
               </span>
             </div>
             <p className="text-[13px] text-[var(--text-muted)] leading-[1.7]">
@@ -74,7 +81,7 @@ export default function Footer() {
       {/* Bottom */}
       <div className="flex items-center justify-between">
         <span className="text-[12px] text-[var(--text-muted)]">
-          &copy; 2026 Meridian Technologies, Inc. All rights reserved.
+          &copy; 2026 Nox Systems, Inc. All rights reserved.
         </span>
         <div className="flex items-center gap-6">
           {["SOC 2 Type II Certified", "ISO 27001", "FedRAMP"].map((cert) => (
