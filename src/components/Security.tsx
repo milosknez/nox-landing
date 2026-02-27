@@ -1,3 +1,7 @@
+"use client";
+
+import AnimateIn, { StaggerContainer, StaggerItem } from "./AnimateIn";
+
 const securityCards = [
   {
     num: "01",
@@ -21,43 +25,55 @@ const securityCards = [
 
 export default function Security() {
   return (
-    <section className="flex flex-col gap-16 w-full py-24 px-[120px] bg-[var(--bg-elevated)] border-t border-[var(--border)]">
+    <section id="security" className="relative flex flex-col gap-16 w-full py-28 px-[120px] bg-[var(--bg-elevated)]">
+      {/* Top gradient line */}
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[var(--border-hover)] to-transparent" />
+
+      {/* Background accent */}
+      <div className="absolute top-[100px] right-0 w-[500px] h-[500px] bg-[var(--gradient-mid)] opacity-[0.02] blur-[150px] rounded-full pointer-events-none" />
+
       {/* Header */}
       <div className="flex items-end justify-between w-full">
-        <div className="flex flex-col gap-4 max-w-[600px]">
-          <span className="font-mono text-[10px] text-[var(--text-muted)] tracking-[4px]">
-            SECURITY
-          </span>
-          <h2 className="text-[40px] font-semibold text-[var(--text-primary)] leading-[1.15] tracking-[-0.8px]">
-            Security architecture designed
-            <br />
-            for zero-compromise environments.
-          </h2>
+        <div className="flex flex-col gap-5 max-w-[600px]">
+          <AnimateIn variant="fadeUp" delay={0.1}>
+            <span className="font-mono text-[10px] text-[var(--accent)] tracking-[4px] flex items-center gap-3">
+              <span className="w-6 h-px bg-[var(--accent)]" />
+              SECURITY
+            </span>
+          </AnimateIn>
+          <AnimateIn variant="fadeUp" delay={0.2}>
+            <h2 className="text-[44px] font-semibold text-[var(--text-primary)] leading-[1.12] tracking-[-1px]">
+              Security architecture designed
+              <br />
+              for <span className="gradient-text">zero-compromise</span> environments.
+            </h2>
+          </AnimateIn>
         </div>
-        <p className="text-[15px] text-[var(--text-secondary)] leading-[1.6] text-right max-w-[340px]">
-          Every layer encrypted. Every access logged.
-          <br />
-          Every deployment auditable.
-        </p>
+        <AnimateIn variant="fadeLeft" delay={0.3}>
+          <p className="text-[15px] text-[var(--text-secondary)] leading-[1.7] text-right max-w-[340px]">
+            Every layer encrypted. Every access logged.
+            <br />
+            Every deployment auditable.
+          </p>
+        </AnimateIn>
       </div>
 
       {/* Cards */}
-      <div className="grid grid-cols-3 gap-6">
+      <StaggerContainer className="grid grid-cols-3 gap-5" staggerDelay={0.12}>
         {securityCards.map((card) => (
-          <div
-            key={card.num}
-            className="flex flex-col gap-5 p-7 bg-[var(--bg-surface)] rounded-[4px] border border-[var(--border)]"
-          >
-            <span className="font-mono text-[32px] font-light text-[var(--border)]">
-              {card.num}
-            </span>
-            <h3 className="text-[16px] font-semibold text-[var(--text-primary)]">{card.title}</h3>
-            <p className="text-[13px] text-[var(--text-secondary)] leading-[1.65]">
-              {card.description}
-            </p>
-          </div>
+          <StaggerItem key={card.num}>
+            <div className="group flex flex-col gap-5 p-7 bg-[var(--bg-surface)] rounded-[10px] card-hover h-full">
+              <span className="font-mono text-[36px] font-light gradient-text opacity-40 group-hover:opacity-70 transition-opacity duration-300">
+                {card.num}
+              </span>
+              <h3 className="text-[17px] font-semibold text-[var(--text-primary)]">{card.title}</h3>
+              <p className="text-[13px] text-[var(--text-secondary)] leading-[1.7]">
+                {card.description}
+              </p>
+            </div>
+          </StaggerItem>
         ))}
-      </div>
+      </StaggerContainer>
     </section>
   );
 }
